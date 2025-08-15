@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarterly Earnings Report — RevealJS</title>
+
+  <!-- Reveal.js core CSS & theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/white.css" id="theme" />
+
+  <!-- Code highlight theme (used by plugin/highlight) -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github-dark.css" />
+
+  <style>
+    .footnote { font-size: 0.6em; opacity: 0.8; }
+    .small { font-size: 0.8em; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h2>Quarterly Earnings Report</h2>
+        <p class="small">Interactive deck built with <strong>RevealJS</strong></p>
+        <p>Technical Consultant — Major Financial Institution</p>
+        <p class="small">Contact: <a href="mailto:22f3000982@ds.study.iitm.ac.in">22f3000982@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">
+          Welcome the audience. Mention the deck is fully web-based, keyboard-accessible (←/→), and works on mobile. Explain we will cover business highlights, financials, and roadmap.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (requirements: at least one slide in Markdown) -->
+      <section data-markdown>
+        <textarea data-template>
+## Headline KPIs (Markdown)
+- **Revenue:** ₹2,450 Cr *(YoY +12%)*
+- **Operating Margin:** 19.4%
+- **Net Profit:** ₹380 Cr *(YoY +9%)*
+- **Active Users:** 11.2M *(QoQ +5%)*
+
+<small class="footnote">These are placeholder values for demo; replace with actuals before publishing.</small>
+
+Notes:
+- Call out growth despite macro headwinds.
+- Point to margin discipline and digital acquisition funnel.
+        </textarea>
+      </section>
+
+      <!-- Fragments (animated reveals) -->
+      <section>
+        <h3>Drivers of Performance</h3>
+        <ul>
+          <li class="fragment fade-in">Retail lending volume recovery</li>
+          <li class="fragment fade-in">Lower cost of funds via term deposits</li>
+          <li class="fragment fade-in">Fee income from payments & wealth</li>
+          <li class="fragment fade-in">Opex leverage from automation</li>
+        </ul>
+        <aside class="notes">Step through each bullet and provide a 1-line story per driver. Pause for questions after the last fragment.</aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h3>Code Sample: KPI Sanity Check (Python)</h3>
+        <pre><code class="language-python">from math import isclose
+
+def margin(revenue, operating_income):
+    return operating_income / revenue
+
+rev = 2450e7  # ₹2,450 Cr in paise units (example)
+op_income = 0.194 * rev
+
+assert isclose(margin(rev, op_income), 0.194, rel_tol=1e-9)
+print(f"Operating Margin: {margin(rev, op_income):.2%}")
+</code></pre>
+        <aside class="notes">Explain that engineering checks can validate figures before publishing dashboards or PDFs.</aside>
+      </section>
+
+      <!-- Math (financial formulas) -->
+      <section data-markdown>
+        <textarea data-template>
+### Valuation & Risk (Math)
+Net Present Value (NPV):  
+$$\mathrm{NPV} = \sum_{t=0}^{T} \frac{C_t}{(1+r)^t}$$
+
+Weighted Average Cost of Capital (WACC):  
+$$\mathrm{WACC} = \frac{E}{D+E} r_e + \frac{D}{D+E} r_d (1-\tau)$$
+
+Value-at-Risk (VaR) (variance-covariance):  
+$$\mathrm{VaR}_{\alpha} = z_{\alpha} \cdot \sigma_P \cdot V$$
+
+<small class="footnote">Render via KaTeX using RevealMath plugin.</small>
+
+Notes:
+- Briefly remind audience of discounting intuition.
+- Emphasize capital structure sensitivity to rates.
+        </textarea>
+      </section>
+
+      <!-- Layout: two columns using nested sections -->
+      <section>
+        <h3>Roadmap (Next Quarter)</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:start;">
+          <div>
+            <h4>Growth</h4>
+            <ul>
+              <li class="fragment fade-in-then-semi-out">BNPL partnerships</li>
+              <li class="fragment fade-in-then-semi-out">SME onboarding simplification</li>
+              <li class="fragment fade-in-then-semi-out">Cross-sell in wealth</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Resilience</h4>
+            <ul>
+              <li class="fragment fade-in-then-semi-out">Credit risk early-warning ML</li>
+              <li class="fragment fade-in-then-semi-out">Cloud cost governance</li>
+              <li class="fragment fade-in-then-semi-out">Operational risk playbooks</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">Present growth first, then resilience. Ask Product to speak to BNPL, Risk to cover EWIs.</aside>
+      </section>
+
+      <!-- Closing / Contact -->
+      <section>
+        <h3>Thank You</h3>
+        <p>Questions?</p>
+        <p class="small">Contact: <a href="mailto:22f3000982@ds.study.iitm.ac.in">22f3000982@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">Invite Q&A and next steps: board review, publish investor deck, file with exchange if applicable.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js core and plugins -->
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+
+  <script>
+    // Initialize Reveal
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ],
+      // Math config (KaTeX)
+      math: {
+        // KaTeX is bundled by the plugin; config is optional
+      }
+    });
+  </script>
+</body>
+</html>
